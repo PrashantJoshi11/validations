@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_01_122948) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_02_111947) do
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,4 +21,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_122948) do
     t.boolean "termsandcondition"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_feedbacks_on_article_id"
+  end
+
+  add_foreign_key "feedbacks", "articles"
 end

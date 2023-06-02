@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+    has_many :feedbacks, dependent: :destroy
     validates :name, presence: { message: ":Please Enter the Name"}
     validates :age, presence: { message: ":Please Enter the Age"}
     validates :phn, presence: { message: ":Please Enter the Phn"}, numericality: true ,length: { is: 10 }
