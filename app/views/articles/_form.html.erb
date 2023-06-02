@@ -36,7 +36,7 @@
 <div>
 <%= form.label :Confirm_email %><br>
 <%= form.text_field :email_confirmation %>
-<% article.errors.full_messages_for(:Confirm_Email).each do |message| %>
+<% article.errors.full_messages_for(:email_confirmation).each do |message| %>
   <div><%= message %></div> <br>
 <% end %>
 </div>

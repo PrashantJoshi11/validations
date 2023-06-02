@@ -17,6 +17,6 @@ class ArticlesController < ApplicationController
   end
   private
   def article_params
-    params.require(:article).permit(:name, :age, :phn, :email, :termsandcondition)
+    params.require(:article).permit(:name, :age, :phn, :email, :email_confirmation, :termsandcondition)
   end
 end
