@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
   private
   def article_params
     params.require(:article).permit(:name, :age, :phn, :email, :email_confirmation, :termsandcondition)

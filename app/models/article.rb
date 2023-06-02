@@ -5,4 +5,15 @@ class Article < ApplicationRecord
     validates :email, confirmation: true
     validates :termsandcondition, acceptance: true
 
+    after_initialize do 
+        puts "You have initialized an object!"
+      end
+    
+      after_find do 
+        puts "You have found an object!"
+      end
+      after_touch do 
+        puts "You have touched an object"
+      end
+
 end
